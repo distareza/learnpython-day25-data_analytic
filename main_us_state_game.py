@@ -1,5 +1,7 @@
 """
     Learn how to use Turtle Image and Pandas Module
+
+    https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isin.html
 """
 import turtle
 
