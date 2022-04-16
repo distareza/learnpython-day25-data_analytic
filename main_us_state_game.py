@@ -57,8 +57,10 @@ while True and len(guess_states) < 50:
 print(f"Guess corrected : {guess_states}")
 
 # Get Missing State
-missing_states = states_data[~states_data.state.isin(guess_states)]
-print(f"not able to guess : {missing_states.state.to_list()}")
+#missing_states = states_data[~states_data.state.isin(guess_states)]
+#print(f"not able to guess : {missing_states.state.to_list()}")
+#pandas.DataFrame(missing_states.state.to_list()).to_csv("states_to_learn.csv")
 
-pandas.DataFrame(missing_states.state.to_list()).to_csv("states_to_learn.csv")
+missing_states = [state for state in states_data.state.to_list() if state not in guess_states]
+pandas.DataFrame(missing_states).to_csv("states_to_learn.csv")
 
